@@ -4,13 +4,14 @@ import Layout from '@/lib/components/layout';
 import { fontSans } from '@/lib/styles/fonts';
 import { cn } from '@/lib/utils';
 
+import '@radix-ui/themes/styles.css';
 import '@/lib/styles/globals.css';
 
-const APP_NAME = 'nextarter-tailwind';
+const APP_NAME = 'nextarter-radix-tailwind';
 
 export const metadata: Metadata = {
   title: APP_NAME,
-  description: 'Next.js + TailwindCSS v3 + TypeScript template',
+  description: 'Next.js + Radix + TailwindCSS v3 + TypeScript template',
   viewport: {
     width: 'device-width',
     initialScale: 1,
@@ -26,12 +27,12 @@ export const metadata: Metadata = {
   },
   themeColor: '#FFFFFF',
   openGraph: {
-    url: 'https://nextarter-tailwind.sznm.dev',
-    title: 'nextarter-tailwind',
-    description: 'Next.js + TailwindCSS v3 + TypeScript template',
+    url: 'https://nextarter-radix-tailwind.sznm.dev',
+    title: APP_NAME,
+    description: 'Next.js + Radix + TailwindCSS v3 + TypeScript template',
     images: {
-      url: 'https://og-image.sznm.dev/**nextarter-tailwind**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250',
-      alt: 'nextarter-tailwind.sznm.dev og-image',
+      url: `https://og-image.sznm.dev/**${APP_NAME}**.sznm.dev.png?theme=dark&md=1&fontSize=125px&images=https%3A%2F%2Fsznm.dev%2Favataaars.svg&widths=250`,
+      alt: `${APP_NAME}.sznm.dev og-image`,
     },
   },
   twitter: {
@@ -47,12 +48,7 @@ interface RootLayoutProps {
 const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={cn(
-          'min-h-screen bg-background font-sans antialiased',
-          fontSans.variable
-        )}
-      >
+      <body className={cn('min-h-screen antialiased', fontSans.variable)}>
         <Layout>
           <div className="flex-1">{children}</div>
         </Layout>

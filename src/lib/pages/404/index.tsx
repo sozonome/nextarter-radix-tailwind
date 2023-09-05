@@ -1,7 +1,6 @@
+import { Button } from '@radix-ui/themes';
 import Image from 'next/image';
 import Link from 'next/link';
-
-import { Button } from '@/lib/components/ui/button';
 
 const Page404 = () => {
   return (
@@ -13,7 +12,7 @@ const Page404 = () => {
           height={320}
           alt="404 Illustration"
         />
-        <Button variant="link" asChild>
+        <Button variant="ghost" asChild>
           <a href="https://storyset.com/web" className="text-xs">
             Web illustrations by Storyset
           </a>

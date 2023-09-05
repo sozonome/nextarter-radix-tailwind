@@ -1,3 +1,4 @@
+import { Theme } from '@radix-ui/themes';
 import type { ReactNode } from 'react';
 
 import { ThemeProvider } from '@/lib/components/theme-provider';
@@ -12,11 +13,13 @@ type LayoutProps = {
 const Layout = ({ children }: LayoutProps) => {
   return (
     <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
-      <div className="flex min-h-screen flex-col">
-        <Header />
-        <main className="wrapper">{children}</main>
-        <Footer />
-      </div>
+      <Theme>
+        <div className="flex min-h-screen flex-col font-sans">
+          <Header />
+          <main className="wrapper">{children}</main>
+          <Footer />
+        </div>
+      </Theme>
     </ThemeProvider>
   );
 };
