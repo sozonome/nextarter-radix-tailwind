@@ -1,7 +1,7 @@
 /* eslint-disable @next/next/no-img-element */
 import { Button } from '@radix-ui/themes';
 
-const repoName = 'sozonome/nextarter-tailwind';
+const repoName = 'sozonome/nextarter-radix-tailwind';
 
 const CTASection = () => {
   return (
