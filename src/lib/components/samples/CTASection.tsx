@@ -34,8 +34,8 @@ const CTASection = () => {
         </a>
       </div>
 
-      <div className="flex items-center gap-2">
-        <Button asChild color="green">
+      <div className="flex items-center gap-4">
+        <Button asChild color="green" size="3">
           <a
             href={`https://github.com/${repoName}/generate`}
             target="_blank"
@@ -46,7 +46,7 @@ const CTASection = () => {
         </Button>
         <Button asChild variant="ghost">
           <a
-            className="rounded-3xl p-2 text-xs font-semibold"
+            className="rounded-3xl p-2 font-semibold"
             href={`https://github.com/${repoName}`}
             target="_blank"
             rel="noopener noreferrer"

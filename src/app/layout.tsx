@@ -1,4 +1,4 @@
-import type { Metadata } from 'next';
+import type { Metadata, Viewport } from 'next';
 
 import Layout from '@/lib/components/layout';
 import { fontSans } from '@/lib/styles/fonts';
@@ -12,10 +12,6 @@ const APP_NAME = 'nextarter-radix-tailwind';
 export const metadata: Metadata = {
   title: APP_NAME,
   description: 'Next.js + Radix + TailwindCSS v3 + TypeScript template',
-  viewport: {
-    width: 'device-width',
-    initialScale: 1,
-  },
   applicationName: APP_NAME,
   appleWebApp: {
     capable: true,
@@ -25,7 +21,6 @@ export const metadata: Metadata = {
   formatDetection: {
     telephone: false,
   },
-  themeColor: '#FFFFFF',
   openGraph: {
     url: 'https://nextarter-radix-tailwind.sznm.dev',
     title: APP_NAME,
@@ -41,6 +36,12 @@ export const metadata: Metadata = {
   },
 };
 
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  themeColor: '#FFFFFF',
+};
+
 interface RootLayoutProps {
   children: React.ReactNode;
 }
@@ -49,9 +50,7 @@ const RootLayout = ({ children }: RootLayoutProps) => {
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={cn('min-h-screen antialiased', fontSans.variable)}>
-        <Layout>
-          <div className="flex-1">{children}</div>
-        </Layout>
+        <Layout>{children}</Layout>
       </body>
     </html>
   );
